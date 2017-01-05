@@ -18,7 +18,7 @@ babel转码器babel是一个广泛使用的es6转码器，可以将es6代码转�
 <meta property="og:description" content="es6虽然出现有一段时间，各大浏览器对es6的支持度也越来越高，不过兼容性性依旧是个蛋疼的问题。今天，我就来讲讲如何用es6的方式编写程序，又不要担心环境时候支持。    附：浏览器对es6的支持可以查看 kangax.github.io/es5-compat-table/es6/。
 
 babel转码器babel是一个广泛使用的es6转码器，可以将es6代码转为es5代码。本文将介绍如何使用bab">
-<meta property="og:updated_time" content="2017-01-05T08:28:09.717Z">
+<meta property="og:updated_time" content="2017-01-05T08:33:36.138Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6入门之babel转码">
 <meta name="twitter:description" content="es6虽然出现有一段时间，各大浏览器对es6的支持度也越来越高，不过兼容性性依旧是个蛋疼的问题。今天，我就来讲讲如何用es6的方式编写程序，又不要担心环境时候支持。    附：浏览器对es6的支持可以查看 kangax.github.io/es5-compat-table/es6/。
@@ -200,32 +200,31 @@ babel转码器babel是一个广泛使用的es6转码器，可以将es6代码转�
 <p><code>npm install --save-dev babel-cli</code></p>
 <ol>
 <li><p>修改项目中package.json （在devDependencies上加上script）</p>
-<pre><code>+&quot;scripts&quot;: {
-+     &quot;build&quot;: &quot;babel src -d lib&quot;
-+   },
+<pre><code>&quot;scripts&quot;: {
+     &quot;build&quot;: &quot;babel src -d lib&quot;
+ },
  &quot;devDependencies&quot;: {
 &quot;babel-cli&quot;: &quot;^6.10.1&quot;
   }
 </code></pre></li>
 <li><p>在项目的根目录下创建 .babelrc 文件（window系统可以用webstrom等软件创建）,在文件内输入以下内容：</p>
-<p> {</p>
-<pre><code>&quot;presets&quot;: [],
+<pre><code>{
+&quot;presets&quot;: [],
 &quot;plugins&quot;: []
-</code></pre><p> }</p>
-</li>
+}
+</code></pre></li>
 <li><p>为了让babel将es6转化为es5，还需要安装：</p>
 </li>
 </ol>
 <p><code>npm install --save-dev babel-preset-es2015</code></p>
 <ol>
-<li><p>安装完成后在.babelrc中添加参数：</p>
-<p> {</p>
-<pre><code>&quot;presets&quot;: [&quot;es2015&quot;],
-&quot;plugins&quot;: []
-</code></pre><p> }</p>
-</li>
+<li>安装完成后在.babelrc中添加参数：</li>
 </ol>
-<p>大功告成！下面来试一试</p>
+<pre><code>{
+&quot;presets&quot;: [&quot;es2015&quot;],
+&quot;plugins&quot;: []
+}
+</code></pre><p>大功告成！下面来试一试</p>
 <p>新建1.js 写上</p>
 <p><code>let a = 1</code></p>
 <p>在终端输入</p>
