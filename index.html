@@ -151,6 +151,181 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ES6入门之let、const、作用域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/06/ES6入门之let、const、作用域/">ES6入门之let、const、作用域</a>
+    </h1>
+  
+
+        
+        <a href="/2017/01/06/ES6入门之let、const、作用域/" class="archive-article-date">
+  	<time datetime="2017-01-06T10:51:25.199Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-let命令"><a href="#1-let命令" class="headerlink" title="1.let命令"></a>1.let命令</h1><hr>
+<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><p>es6新增了let命令来声明变量，但它声明的变量只在let命令所在的代码所在的代码块内有效。</p>
+<pre><code>{
+    let a=10;
+    var b=10;
+}
+console.log(a); //报错 a is not defined
+console.log(b); //10
+</code></pre><p>根据这个特性，let命令就很适合for循环</p>
+<pre><code>for(let i=0;i&lt;10;i++){}
+console.log(i); //报错
+</code></pre><p>i只在for体内有效，在循环体外应用会报错</p>
+<p>注意比较下面的代码的区别</p>
+<pre><code>for(var i=0;i&lt;10;i++){
+    a[i]=function(){
+        console.log(i);
+    }
+}
+a[5]();  //输出10
+
+for(let i=0;i&lt;10;i++){
+    a[i]=function(){
+        console.log(i);
+    }
+}
+a[5]();  //输出5
+</code></pre><p>上面的代码，用var声明的i是全局的，每一次循环i的值都会刷新，所以输出的是最新的10；</p>
+<p>如果使用的是let，声明的变量仅在块级作用域中有效，最后输出5。</p>
+<table><tr><td bgcolor="red">注意：每一次循环的i都是一个新的变量（重新声明），也可以理解为这个循环产生了10个作用域。</td></tr></table>
+
+<hr>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><h3 id="不存在变量提升"><a href="#不存在变量提升" class="headerlink" title="不存在变量提升"></a>不存在变量提升</h3><p>let不存在变量名提升。变量一定要在声明后使用，否则会报错。</p>
+<pre><code>console.log(a);//输出undefined
+var a=1;  //var存在变提升
+
+console.log(b); //报错
+let b=1; //let不存在变量提升
+</code></pre><p>注意：let，const虽然不会提升变量名，但是会形成封闭作用域。在声明之前使用这些变量就会报错。哪怕全局存在这个变量。实例如下：</p>
+<pre><code>var a=1;
+if(true){
+    a=2; //报错
+    let a;
+}
+</code></pre><p>这个语法上称为”暂时性死区”。同样的，typeof也不像之前一样绝对安全。现在在let声明之前使用typeof（声明的变量）会报错。要是没有let声明会返回undefined。</p>
+<h3 id="不允许重复声明"><a href="#不允许重复声明" class="headerlink" title="不允许重复声明"></a>不允许重复声明</h3><p>let不允许在相同的作用域内，重复声明一个变量。</p>
+<pre><code>{
+    let a=1;
+    var a=1;  //报错
+}
+
+{
+    let a=1;
+    let a=1;  //报错
+}
+
+function fn（a）{
+    let a;    //报错
+}
+
+function fn（a）{
+    {
+    let a;    //不报错
+    }
+}
+</code></pre><table><tr><td bgcolor="red"> 注意函数形参的自动声明。不能在函数内部重新声明参数。</td></tr></table>
+
+<h1 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h1><p>es5只有全局作用域和函数作用域，并没有块级作用域。这会造成内层变量将外层覆盖，for循环变量泄露成全局变量（循环结束不消失）。</p>
+<p>let给es6带来了块级作用域。</p>
+<p>1.外层代码不受内层代码的影响。</p>
+<pre><code>let a=1;
+{
+    let a=2;
+}
+console.log(a); //输出1；
+</code></pre><p>2.块级作用可以任意嵌套 但是外层作用域无法读取内层作用域的变量。</p>
+<pre><code>{{{{
+		 {
+			let a=1;
+		 }
+		console.log(a); //报错
+	}}}}
+</code></pre><p>3.块级作用域使得自调用函数不在必要了。</p>
+<pre><code>（function(){var a=1;}）();
+可以替换为
+{
+    let a=1；
+}
+</code></pre><p>4.块级作用域内声明函数，其行为类似let，在块级作用域外不能应用该函数。</p>
+<p>实际上这个规定存在很大的兼容性问题，应该避免在块级作用域内声明函数。如果确实需要，应该写成函数表达式，而不是函数声明。<br>    {<br>        let fn=function(){}<br>    }</p>
+<pre><code>if(true) function(){} //会报错 必须要大括号
+</code></pre><hr>
+<h1 id="const命令"><a href="#const命令" class="headerlink" title="const命令"></a>const命令</h1><p>const声明一个常量。一旦声明，常量的值就不会改变。</p>
+<p>1.const声明的时候的必须初始化其值。<br>    const a=1；<br>    const b; //报错</p>
+<p>2.const的作用域同let:只在其所在的块级作用域内生效</p>
+<p>3.const命令声明的常量也不提升，只能在声明后使用。同let</p>
+<p>4.const声明不能重复声明。同let</p>
+<p>5.<table><tr><td bgcolor="red"> 对于复合型变量，变量名指向数据的地址。const只能保证指向地址不变，但不能保证地址所在的数据不变。</td></tr></table></p>
+<pre><code>const a={};
+a.abc=123; //可执行
+a=[]; //报错
+</code></pre><p>如果想将一个对象冻结，不让其改变可以用object.freeze方法。<br>    const obj=obiect.freeze({});<br>    foo.a=1; //在严格模式下报错 在常规模式下不起作用</p>
+<p>这个方法可以冻结对象本身，但不能冻结对象的属性。下面方法可以彻底冻结：</p>
+<pre><code>var dongjie =(obj)=&gt;{
+    object.freeze(obj);
+    object.keys(obj).foreach((v,i)=&gt;{
+        if(typeof obj[v]===&apos;object&apos;){ dongjie(obj[v])}        
+    });
+};
+</code></pre><h2 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h2><p>var和function声明的变量是全局变量，是顶层对象的属性。但let和const声明的变量不属于顶层对象的属性。</p>
+<pre><code>var a=1;
+console.log(window.a); //输出1
+
+let b=2;
+console.log(window.b); //输出undefined
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">ES6</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/01/06/ES6入门之let、const、作用域/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-ES6入门之babel转码器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -376,6 +551,10 @@ var  a=1;
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">ES6</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">es6</a>
