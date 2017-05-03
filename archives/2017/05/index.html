@@ -6,36 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>ES6入门之数值、数组、字符串的扩展 | gyj的博客</title>
+  <title>Archives: 2017/5 | gyj的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数值的扩展1.二进制和八进制表示法es6提供了二进制和八进制数值的新写法，分别用前缀0b（0B）和0o（0O）表示。
-0b111110111===503 //true
-0o767===503 //true
-可以用Number将0b和0o前缀的字符串数值转为十进制。
-Number（&amp;apos;0b111&amp;apos;）  //7
-Number(&amp;apos;0o10&amp;apos;)    //8
-2.Nu">
-<meta property="og:type" content="article">
-<meta property="og:title" content="ES6入门之数值、数组、字符串的扩展">
-<meta property="og:url" content="http://yoursite.com/2017/01/17/ES6入门之数值、数组、字符串的扩展/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="gyj的博客">
+<meta property="og:url" content="http://yoursite.com/archives/2017/05/index.html">
 <meta property="og:site_name" content="gyj的博客">
-<meta property="og:description" content="数值的扩展1.二进制和八进制表示法es6提供了二进制和八进制数值的新写法，分别用前缀0b（0B）和0o（0O）表示。
-0b111110111===503 //true
-0o767===503 //true
-可以用Number将0b和0o前缀的字符串数值转为十进制。
-Number（&amp;apos;0b111&amp;apos;）  //7
-Number(&amp;apos;0o10&amp;apos;)    //8
-2.Nu">
-<meta property="og:updated_time" content="2017-02-07T13:37:17.775Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6入门之数值、数组、字符串的扩展">
-<meta name="twitter:description" content="数值的扩展1.二进制和八进制表示法es6提供了二进制和八进制数值的新写法，分别用前缀0b（0B）和0o（0O）表示。
-0b111110111===503 //true
-0o767===503 //true
-可以用Number将0b和0o前缀的字符串数值转为十进制。
-Number（&amp;apos;0b111&amp;apos;）  //7
-Number(&amp;apos;0o10&amp;apos;)    //8
-2.Nu">
+<meta name="twitter:title" content="gyj的博客">
   
     <link rel="alternative" href="/atom.xml" title="gyj的博客" type="application/atom+xml">
   
@@ -171,228 +149,60 @@ Number(&amp;apos;0o10&amp;apos;)    //8
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ES6入门之数值、数组、字符串的扩展" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      ES6入门之数值、数组、字符串的扩展
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/05/03/移动端处理字符串时间/" class="archive-article-date">
+  	<time datetime="2017-05-03T07:54:13.584Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-03</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/05/03/移动端处理字符串时间/">移动端处理2017-5-3转化为时间戳</a>
     </h1>
   
 
-        
-        <a href="/2017/01/17/ES6入门之数值、数组、字符串的扩展/" class="archive-article-date">
-  	<time datetime="2017-01-17T06:30:51.262Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="数值的扩展"><a href="#数值的扩展" class="headerlink" title="数值的扩展"></a>数值的扩展</h1><h3 id="1-二进制和八进制表示法"><a href="#1-二进制和八进制表示法" class="headerlink" title="1.二进制和八进制表示法"></a>1.二进制和八进制表示法</h3><p>es6提供了二进制和八进制数值的新写法，分别用前缀0b（0B）和0o（0O）表示。</p>
-<pre><code>0b111110111===503 //true
-0o767===503 //true
-</code></pre><p>可以用Number将0b和0o前缀的<strong>字符串</strong>数值转为十进制。</p>
-<pre><code>Number（&apos;0b111&apos;）  //7
-Number(&apos;0o10&apos;)    //8
-</code></pre><h3 id="2-Number-isFinite-Number-isNaN"><a href="#2-Number-isFinite-Number-isNaN" class="headerlink" title="2.Number.isFinite(),Number.isNaN()"></a>2.Number.isFinite(),Number.isNaN()</h3><p>Number.isFinite()用来检查一个<strong>数值</strong>时候为有限的，返回布尔值。</p>
-<pre><code>Number.isFinite(100);     //true
-Number.isFinite(0.002); //true
-Number.isFinite(NaN);   //false
-Number.isFinite(Infinity) //false
-Number.isFinite(&apos;100&apos;) //false
-Number.isFinite(true);    //false
-</code></pre><p>Number.isNaN()用来检查一个值是否为NaN。</p>
-<p>注：这两个方法只对数值有效，非数值返回false。</p>
-<h3 id="3-Number-parseInt-Number-parseFloat"><a href="#3-Number-parseInt-Number-parseFloat" class="headerlink" title="3.Number.parseInt(),Number.parseFloat()"></a>3.Number.parseInt(),Number.parseFloat()</h3><p>es6将全局方法parseInt（）和parseFloat()移植到Number对象上。功能保持不变。</p>
-<h3 id="4-Number-isInteger-判断一个数是否是整数。"><a href="#4-Number-isInteger-判断一个数是否是整数。" class="headerlink" title="4.Number.isInteger() 判断一个数是否是整数。"></a>4.Number.isInteger() 判断一个数是否是整数。</h3><pre><code>注意：js中整数和浮点数的存储方式相同 3和3.0是同一个值。
-Number.isInteger(3) //true 
-Number.isInteger(3.0) //true   
-Number.isInteger(3.1) //true  
-</code></pre><h3 id="5-NUmber-EPSILON-这是一个极小的常量-如果浮点数的计算误差小于这个值-即视为得到了正确的结果。"><a href="#5-NUmber-EPSILON-这是一个极小的常量-如果浮点数的计算误差小于这个值-即视为得到了正确的结果。" class="headerlink" title="5.NUmber.EPSILON 这是一个极小的常量 如果浮点数的计算误差小于这个值 即视为得到了正确的结果。"></a>5.NUmber.EPSILON 这是一个极小的常量 如果浮点数的计算误差小于这个值 即视为得到了正确的结果。</h3><h3 id="6-安全整数和Number-isSafeInteger-。"><a href="#6-安全整数和Number-isSafeInteger-。" class="headerlink" title="6.安全整数和Number.isSafeInteger()。"></a>6.安全整数和Number.isSafeInteger()。</h3><pre><code>es6引入Number.MAX_SAFE_INTEGER和Number.MIN_SAFE_INTEGER这两个常量表示安全整数的范围。Number.isSafeInteger()用来判断一个整数是否在这个范围之内。
-</code></pre><h3 id="7-Math对象的扩展"><a href="#7-Math对象的扩展" class="headerlink" title="7.Math对象的扩展"></a>7.Math对象的扩展</h3><pre><code>1.Math.trunc() //去除一个数的小数部分，返回整数部分
-    Math.trunc(4.1) //4
-    Math.trunc(-4.1) //-4
-    Math.trunc(&apos;123.456&apos;) //123 会先把string转换为number
-    Math.trunc(&apos;abc&apos;)  //nan 无法截取整数的值返回NAN
-
-2.Math.sign() 判断一个数是正数，负数，还是零
-    参数是正数 返回+1；
-    参数是负数 返回-1；
-    参数是0，返回0；
-    参数是-0，返回-0；
-    其他值，返回NaN
-
-3.Math.cbrt()  用于计算一个数的立方根
-
-4.Math.clz32()  返回一个数的32位无符号整数形式前面有多少个0。对于小数只考虑整数部分
-
-5.Math.imul() 返回两个数以32位形式相乘的结果
-
-6.Math.fround() 返回最接近小数的单精度浮点数，对于整数返回原值。
-
-7.Math.hypot() 返回所有参数的平方和的平方根
-    Math.hypot(3,4)  //5
-</code></pre><h3 id="8-对数方法"><a href="#8-对数方法" class="headerlink" title="8.对数方法"></a>8.对数方法</h3><pre><code>1.Math.expm1()   //返回e的x次方再减1的值
-2.Math.log1p()  //返回Math.log（x+1)的值
-3.Math.log10() //返回以10为底x的对数
-4.Math.log2() //返回以2为底x的对数
-</code></pre><h3 id="9-三角函数方法"><a href="#9-三角函数方法" class="headerlink" title="9.三角函数方法"></a>9.三角函数方法</h3><pre><code>Math.sinh(x) 返回x的双曲正弦（hyperbolic sine）
-Math.cosh(x) 返回x的双曲余弦（hyperbolic cosine）
-Math.tanh(x) 返回x的双曲正切（hyperbolic tangent）
-Math.asinh(x) 返回x的反双曲正弦（inverse hyperbolic sine）
-Math.acosh(x) 返回x的反双曲余弦（inverse hyperbolic cosine）
-Math.atanh(x) 返回x的反双曲正切（inverse hyperbolic tangent）
-</code></pre><h3 id="10-指数运算符（-）"><a href="#10-指数运算符（-）" class="headerlink" title="10.指数运算符（**）"></a>10.指数运算符（**）</h3><pre><code>2**2  //4
-2**3 //8
-
-let a=2;
-a **=3;  //等同于a=a**3   a=a*a*a
-</code></pre><h1 id="数组的扩展"><a href="#数组的扩展" class="headerlink" title="数组的扩展"></a>数组的扩展</h1><h3 id="1-Array-from-可以将类似数组的对象和可遍历的对象转化为真正的数组。"><a href="#1-Array-from-可以将类似数组的对象和可遍历的对象转化为真正的数组。" class="headerlink" title="1.Array.from()  可以将类似数组的对象和可遍历的对象转化为真正的数组。"></a>1.Array.from()  可以将类似数组的对象和可遍历的对象转化为真正的数组。</h3><pre><code>let obj={&apos;0&apos;:&quot;a&quot;,&quot;1&quot;:&quot;b&quot;,&quot;2&quot;:&quot;c&quot;,length:3}
-let arr=Array.from(obj)  //[&quot;a&quot;,&quot;b&quot;,&quot;c&quot;]
-</code></pre><p>常用于dom操作返回的nodelist集合以及函数内部的arguments对象。<br>类似数组的本质就是拥有length属性。<br>    Array.from({length:3}) //[undefined.undefined,undefined]<br>Array.from() 可以接受两个参数  第二个参数接受一个方法对每个元素进行处理，将处理好的值返回数组（类似map方法）<br>    Array.from([1,2,3] , (x) =&gt;x*x) //[1,4,9]</p>
-<h3 id="2-Array-of-用于将一组值转化为数组"><a href="#2-Array-of-用于将一组值转化为数组" class="headerlink" title="2.Array.of()  用于将一组值转化为数组"></a>2.Array.of()  用于将一组值转化为数组</h3><pre><code>Array.of(3,11,8) //[3,11,8]。
-</code></pre><p>参数为空则返回一个空数组。<br>Array.of() 是array（）的完善，注意区别。</p>
-<h3 id="3-数组实例copyWithin（）-添加在数组原型属性上的方法，可以将指定位置的值复制到其他位置，返回新数组"><a href="#3-数组实例copyWithin（）-添加在数组原型属性上的方法，可以将指定位置的值复制到其他位置，返回新数组" class="headerlink" title="3.数组实例copyWithin（） 添加在数组原型属性上的方法，可以将指定位置的值复制到其他位置，返回新数组"></a>3.数组实例copyWithin（） 添加在数组原型属性上的方法，可以将指定位置的值复制到其他位置，返回新数组</h3><p>Array.prototype.copyWithin(target,start,end)<br>接受三个参数 target（必须）：从该位置开始替换数据 start（可选）默认为0 表示从该位置开始读取数据 end（可选）默认是数组长度，到该位置停止读取数据。</p>
-<pre><code>[1,2,3,4,5].copyWithin(0,3,4)  //将第0项的值改为第3项的值 [4,2,3,4,5]
-[1,2,3,4,5].copyWithin(0,3)  //将第3项到结束复制到0号位 [4，5，3,4,5]
-</code></pre><h3 id="4-数组实例的find（）和findIndex（）"><a href="#4-数组实例的find（）和findIndex（）" class="headerlink" title="4.数组实例的find（）和findIndex（）"></a>4.数组实例的find（）和findIndex（）</h3><p>find方法用于找出第一个符合条件的数组成员，他的参数是一个回调函数。找不到返回undefined<br>    [1,4,-10,4].find((n) =&gt;n&lt;0)   //-10<br>回调函数可以接受3个参数。依次是当前的值，当前的位置，和原数组</p>
-<p>findIndex方法和find类似，他返回第一个符合条件的成员的位置，找不到返回-1</p>
-<h3 id="5-数组实例的fill（）-接受定值，填充数组，将已有元素全部抹去。用于初始化数组"><a href="#5-数组实例的fill（）-接受定值，填充数组，将已有元素全部抹去。用于初始化数组" class="headerlink" title="5.数组实例的fill（）  接受定值，填充数组，将已有元素全部抹去。用于初始化数组"></a>5.数组实例的fill（）  接受定值，填充数组，将已有元素全部抹去。用于初始化数组</h3><pre><code>[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;].fill(7)  //[7,7,7]
-[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;].fill(7，1，2)  //[&apos;a&apos;,7,&apos;b&apos;] 第二个参数起始位置 第3个参数结束位置
-</code></pre><h3 id="6-数组实例的entries-keys-values-返回遍历器对象。"><a href="#6-数组实例的entries-keys-values-返回遍历器对象。" class="headerlink" title="6.数组实例的entries(),keys(),values() 返回遍历器对象。"></a>6.数组实例的entries(),keys(),values() 返回遍历器对象。</h3><h3 id="7-数组实例的includes-f返回一个布尔值-判断数组中是否含有给定的值。"><a href="#7-数组实例的includes-f返回一个布尔值-判断数组中是否含有给定的值。" class="headerlink" title="7.数组实例的includes() f返回一个布尔值 判断数组中是否含有给定的值。"></a>7.数组实例的includes() f返回一个布尔值 判断数组中是否含有给定的值。</h3><h3 id="8-数组的空位-es5方法会选择跳过空位-es6则不会跳过"><a href="#8-数组的空位-es5方法会选择跳过空位-es6则不会跳过" class="headerlink" title="8.数组的空位  es5方法会选择跳过空位 es6则不会跳过"></a>8.数组的空位  es5方法会选择跳过空位 es6则不会跳过</h3><h1 id="字符串的扩展"><a href="#字符串的扩展" class="headerlink" title="字符串的扩展"></a>字符串的扩展</h1>
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list">
 			 
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">es6</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color5">工作日记</a>
         </li>
       
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/01/17/ES6入门之数值、数组、字符串的扩展/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/05/03/移动端处理字符串时间/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          移动端处理2017-5-3转化为时间戳
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/01/06/ES6入门之let、const、作用域/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ES6入门之let、const、作用域</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-
-
-
-
-  
-    <div class="duoshuo"></div>
+    </div></section>
   
 
-
+    
 
 
           </div>
@@ -415,8 +225,8 @@ let arr=Array.from(obj)  //[&quot;a&quot;,&quot;b&quot;,&quot;c&quot;]
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

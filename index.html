@@ -151,6 +151,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-移动端处理字符串时间" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/03/移动端处理字符串时间/">移动端处理2017-5-3转化为时间戳</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/03/移动端处理字符串时间/" class="archive-article-date">
+  	<time datetime="2017-05-03T07:54:13.584Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在pc端完全可以将’2016-5-3  22:00:00’这样时间格式转化为时间戳</p>
+<pre><code>new Date(&apos;2016-5-3  22:00:00&apos;).getTime()
+</code></pre><p>但是到移动设备上却不起作用。<br>这时需要将’2016-5-3  22:00:00’转化为’2016/5/3  22:00:00’格式 然后获取时间戳</p>
+<pre><code>var s=&apos;2016-5-3  22:00:00&apos;.replace(/-/g, &quot;/&quot;);
+new Date(s).getTime();
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color5">工作日记</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/03/移动端处理字符串时间/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-ES6入门之数值、数组、字符串的扩展" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -686,6 +752,10 @@ var  a=1;
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">es6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">工作日记</a>
               </li>
             
             <div class="clearfix"></div>
